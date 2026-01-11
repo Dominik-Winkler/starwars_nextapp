@@ -13,6 +13,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Custom ignores:
+    "src/components/ui/**",
   ]),
   eslintPluginUnicorn.configs.recommended,
 ]);
