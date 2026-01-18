@@ -1,17 +1,20 @@
 import { GenericDetailPage } from "@/components/custom_ui/generic-detail-page";
 import { fetchDetail } from "@/lib/api";
 import { SWAPI_RESOURCES } from "@/lib/swapi.config";
-import { Person } from "@/types/swapi";
+import { Species } from "@/types/swapi";
 
-export default async function PersonDetails({
+export default async function SpeciesDetails({
   params,
 }: {
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const person = await fetchDetail<Person>("people", Number(id));
+  const species = await fetchDetail<Species>("species", Number(id));
 
   return (
-    <GenericDetailPage<Person> config={SWAPI_RESOURCES.people} data={person} />
+    <GenericDetailPage<Species>
+      config={SWAPI_RESOURCES.species}
+      data={species}
+    />
   );
 }

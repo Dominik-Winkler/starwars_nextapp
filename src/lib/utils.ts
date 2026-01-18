@@ -16,3 +16,7 @@ export function extractPageNumber(url: string | null) {
     return;
   }
 }
+
+export function extractIdFromUrl(url: string): string {
+  return url.replace(/\/$/, "").split("/").pop() || "";
+}

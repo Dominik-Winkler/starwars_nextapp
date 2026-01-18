@@ -17,3 +17,14 @@ export async function fetchResource<T>(
   const data: ApiResponse<T> = await response.json();
   return data;
 }
+
+export async function fetchDetail<T>(endpoint: string, id: number): Promise<T> {
+  const response = await fetch(`${config.apiBaseUrl}/${endpoint}/${id}`);
+  if (!response.ok) {
+    throw new Error(
+      `Failed to fetch detail from ${config.apiBaseUrl}/${endpoint}/${id}`
+    );
+  }
+  const data: T = await response.json();
+  return data;
+}

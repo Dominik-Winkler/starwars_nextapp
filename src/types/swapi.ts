@@ -5,7 +5,7 @@ export interface ApiResponse<T> {
   results: T[];
 }
 
-export interface Person {
+export type Person = {
   name: string;
   height: string;
   mass: string;
@@ -22,7 +22,7 @@ export interface Person {
   created: string;
   edited: string;
   url: string;
-}
+};
 
 export type Planet = {
   name: string;
